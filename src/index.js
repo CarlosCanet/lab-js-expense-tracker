@@ -17,8 +17,6 @@ class Income extends Entry{
         super(date, amount, description);
         this.type = "income";
     }
-
-
 }
 
 // Expense
@@ -46,8 +44,9 @@ class Budget{
 
     getCurrentBalance() {
         let sum = 0;
-        for (let i = 0; i < this.entries.length; i++) {
-            let entry = this.entries[i];
+        for(let entry of this.entries){
+        // for (let i = 0; i < this.entries.length; i++) {
+        //     let entry = this.entries[i];
             if ( entry instanceof Income) {
                 sum += entry.amount;
             } else if (entry instanceof Expense) {
